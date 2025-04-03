@@ -1,0 +1,34 @@
+import styled from "styled-components";
+import Logo from "./Logo";
+import Theme from "./Theme";
+
+const StyledHeader = styled.header`
+  background-color: white;
+  //border-bottom: 1px solid gray;
+  //border: none;
+  // box-shadow: 2px 1px 2px gray;
+  box-shadow: 0 4px 2px -2px gray;
+  padding: 1px;
+  color: black;
+`;
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 79rem;
+  margin: auto;
+`;
+
+function Header() {
+  return (
+    <StyledHeader>
+      <StyledDiv>
+        <Logo />
+        <Theme />
+      </StyledDiv>
+    </StyledHeader>
+  );
+}
+
+export default Header;
