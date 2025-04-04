@@ -1,11 +1,23 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { useCountry } from "../contexts/CountryContext";
 
 const StyledNumber = styled.div`
   background-color: white;
   border-radius: 3px;
   box-shadow: 1.5px 1.5px 2px 1.5px gray;
-  height: 26px;
-  width: 15px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  ${(props) =>
+    props.type === "active" &&
+    css`
+      //font-size: 1rem;
+      color: var(--color-grey-50);
+      font-weight: 600;
+      background-color: #f25c54;
+    `}
 `;
 
 const Div = styled.div`
@@ -37,20 +49,27 @@ const StyledButton = styled.button`
 `;
 
 function PaginationNumber({ data, onClick }) {
+  const { page } = useCountry();
   console.log(data.length);
   return (
     <Div>
-      <StyledButton>Prev</StyledButton>
-      <NumberContainer>
-        {data.map((s, i) => {
-          return (
-            <StyledNumber key={i}>
-              <Paragraph>{i + 1}</Paragraph>
-            </StyledNumber>
-          );
-        })}
-      </NumberContainer>
-      <StyledButton onClick={onClick}>Next</StyledButton>
+      {data.length > 1 && (
+        <>
+          <StyledButton>Prev</StyledButton>
+          <NumberContainer>
+            {data.map((s, i) => {
+              let active = page === i;
+
+              return (
+                <StyledNumber key={i} type={active && "active"}>
+                  <Paragraph>{i + 1}</Paragraph>
+                </StyledNumber>
+              );
+            })}
+          </NumberContainer>
+          <StyledButton onClick={onClick}>Next</StyledButton>
+        </>
+      )}
     </Div>
   );
 }

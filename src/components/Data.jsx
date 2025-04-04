@@ -7,15 +7,18 @@ import { useCountry } from "../contexts/CountryContext";
 
 //const paginatedResult = paginatedData(originalData);
 function Data() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  //const { isLoading, originalData } = useCountryFetcher();
+  const [searchParams] = useSearchParams();
 
   //  console.log(originalData);
-  const { data, isLoading, page } = useCountry();
+  const { data, isLoading, Dated } = useCountry();
+
+  console.log(Dated);
 
   const paginatedResult = paginatedData(data);
 
-  let sortBy = searchParams.get("region") || "Filter by Region";
+  const Hnh = paginatedData(Dated);
+
+  let sortBy = searchParams.get("region") || "";
 
   if (sortBy === "Filter by Region") sortBy = paginatedResult;
   if (sortBy === "Africa")
@@ -31,7 +34,7 @@ function Data() {
 
   if (isLoading) return "Loading...";
 
-  return <DataItems data={sortBy} />;
+  return <DataItems data={sortBy || Hnh} />;
 }
 
 export default Data;

@@ -2,6 +2,7 @@ import React from "react";
 
 import { HiMagnifyingGlass, HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import styled from "styled-components";
+import { useCountry } from "../contexts/CountryContext";
 
 const Container = styled.div`
   max-width: 72rem;
@@ -36,12 +37,19 @@ const Img = styled.div`
   }
 `;
 function Input() {
+  const { input, handleInput } = useCountry();
+
+  console.log(input);
   return (
     <Container>
       <Img>
         <HiMagnifyingGlass />
       </Img>
-      <StyledInput type="text" placeholder="Search for a country..." />
+      <StyledInput
+        type="text"
+        placeholder="Search for a country..."
+        onChange={(e) => handleInput(e)}
+      />
     </Container>
   );
 }

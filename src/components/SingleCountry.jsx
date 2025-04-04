@@ -4,6 +4,7 @@ import { useCountryFetcher } from "../hooks/useCountryFetcher";
 import styled from "styled-components";
 import formatNumber from "../helpers/formatNumber";
 import { HiArrowLeft } from "react-icons/hi2";
+import { useCountry } from "../contexts/CountryContext";
 
 const Container = styled.main`
   display: flex;
@@ -103,19 +104,17 @@ const ButtonText = styled.h6`
   color: var(--color-green-100);
 `;
 function SingleCountry() {
-  const { originalData } = useCountryFetcher();
+  const { data: Data } = useCountry();
+  //const { originalData } = useCountryFetcher();
   const { name } = useParams();
   const navigate = useNavigate();
   const [data, setData] = useState();
 
   useEffect(() => {
-    setData(originalData?.filter((s) => s.name === name));
-  }, [originalData]);
+    setData(Data?.filter((s) => s.name === name));
+  }, [Data]);
 
-  console.log(originalData);
   //const filteredName = originalData);
-
-  console.log(data);
 
   return (
     <Container>
@@ -137,11 +136,10 @@ function SingleCountry() {
             currencies,
             borders,
           } = s;
-          console.log(borders);
+
           const sp = borders?.map((s) => {
-            return originalData.filter((ss) => ss.alpha3Code === s);
+            return Data.filter((ss) => ss.alpha3Code === s);
           });
-          console.log(sp);
 
           return (
             <Div key={name}>
@@ -201,7 +199,11 @@ function SingleCountry() {
                     <BorderCountry>
                       {sp?.map((border) => {
                         console.log(border);
-                        return <Paragraph>{border[0].name}</Paragraph>;
+                        return (
+                          <Paragraph>
+                            {border[0] ? border[0].name : border.name}
+                          </Paragraph>
+                        );
                       })}
                     </BorderCountry>
                   </Border>

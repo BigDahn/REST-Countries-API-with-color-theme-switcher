@@ -5,23 +5,35 @@ const CountryDataContext = createContext();
 
 function CountryContext({ children }) {
   const [data, setData] = useState();
+  const [Dated, setDated] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(0);
+  const [input, setInput] = useState("");
 
   async function getData() {
     // Fetch data
     setIsLoading(true);
     const response = await fetch(`src/data.json`);
-    console.log(response);
     const result = await response.json();
-    console.log(result);
     setData(result);
+    setDated(result);
     setIsLoading(false);
   }
+
   useEffect(() => {
     getData();
   }, []);
 
+  function handleInput(e) {
+    setInput(e.target.value);
+
+    //setData(data.filter((s) => s.name === e.target.value));
+    //console.log(data);
+    setDated(data.filter((s) => s.name.startsWith(input)));
+  }
+
+  //console.log(data.filter((s) => s.name.startsWith(input)));
+  //"));
   return (
     <CountryDataContext.Provider
       value={{
@@ -30,6 +42,10 @@ function CountryContext({ children }) {
         setIsLoading,
         page,
         setPage,
+        input,
+        handleInput,
+        Dated,
+        setDated,
       }}
     >
       {children}

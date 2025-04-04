@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import formatNumber from "../helpers/formatNumber";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import PaginationNumber from "./PaginationNumber";
+import { useCountry } from "../contexts/CountryContext";
 
 const Main = styled.main`
   display: grid;
@@ -71,14 +72,20 @@ const StyledButton = styled.div`
   background-color: red;
 `;
 function DataItems({ data = {} }) {
-  console.log(data.length);
+  const [searchParams] = useSearchParams();
+  const { page, setPage } = useCountry();
   const [newData, setNewData] = useState();
-  const [page, setPage] = useState(0);
   const navigate = useNavigate();
+  let sortBy = searchParams.get("region");
+
   useEffect(() => {
     setNewData(data[page]);
-    //etPage(0);
   }, [data, page]);
+
+  //resets the page number when sortBy changes
+  useEffect(() => {
+    setPage(0);
+  }, [sortBy]);
 
   function handleNext() {
     setPage((index) => (index === data.length - 1 ? 0 : index + 1));
@@ -89,7 +96,7 @@ function DataItems({ data = {} }) {
       <Main>
         {newData?.map((s) => {
           const { name, flag, population, region, capital } = s;
-          //console.log(s);
+
           return (
             <Section
               role="button"

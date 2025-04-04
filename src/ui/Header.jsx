@@ -6,10 +6,12 @@ const StyledHeader = styled.header`
   background-color: var(--color-grey-100);
   //border-bottom: 1px solid gray;
   //border: none;
+  //width: 100;
+  //background-color: red;
   box-shadow: 1.5px 1.5px 2px -2px gray;
   // box-shadow: 2px 1px 2px gray;
   //box-shadow: 0 2px 2px -2px gray;
-  padding: 1px;
+  //padding: 1px;
 `;
 
 const StyledDiv = styled.div`
