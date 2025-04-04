@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi2";
 import styled from "styled-components";
+import { useTheme } from "../contexts/ThemeToggle";
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -10,37 +11,44 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   border: none;
-  gap: 0.4rem;
-  background-color: white;
+  gap: 0.6rem;
+
+  background-color: var(--color-grey-0);
   border-radius: 4px;
   cursor: pointer;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 
-  &:hover {
-    background-color: red;
+  svg {
+    //</ThemeContext> background-color: red;
+    color: var(--color-green-100);
+    font-weight: 800;
+    fill: var(--color-green-100);
   }
 `;
 
 const StyledText = styled.h3`
   font-size: 0.9em;
   font-weight: 800;
+  color: var(--color-green-100);
 `;
 function Theme() {
-  const [isDark, setIsDark] = useState(false);
+  const { darkTheme, handleTheme } = useTheme();
   return (
     <div>
-      {isDark ? (
-        <StyledButton>
-          <HiOutlineMoon size={30} />
-          <StyledText>Dark Mode</StyledText>
-        </StyledButton>
-      ) : (
-        <StyledButton>
-          <HiOutlineSun size={30} />
-          <StyledText>Light Mode</StyledText>
-        </StyledButton>
-      )}
+      <StyledButton onClick={handleTheme}>
+        {darkTheme ? (
+          <>
+            <HiOutlineSun size={20} />
+            <StyledText>Light Mode</StyledText>
+          </>
+        ) : (
+          <>
+            <HiOutlineMoon size={20} />
+            <StyledText>Dark Mode</StyledText>
+          </>
+        )}
+      </StyledButton>
     </div>
   );
 }

@@ -11,6 +11,7 @@ const Container = styled.main`
   gap: 3em;
   align-items: start;
   margin-top: 2em;
+  color: var(--color-green-100);
 `;
 
 const Div = styled.div`
@@ -49,25 +50,27 @@ const Languages = styled.div`
 const Lang = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.3rem;
   // background-color: red;
   height: 15px;
 `;
 const Paragraph = styled.p`
   font-size: 10px;
-  background-color: gainsboro;
+  background-color: var(--color-grey-490);
+  box-shadow: 1.5px 1px 1px 1.8px #212e37;
   padding-left: 17px;
   padding-right: 17px;
   padding-bottom: 5px;
   padding-top: 5px;
   border-radius: 3px;
+  // border: 3px solid var(--color-grey-490);
 `;
 
 const Image = styled.img`
   object-fit: cover;
   width: 27em;
   height: 19em;
-  box-shadow: 1.5px 1.5px 2px 1.5px gray;
+  box-shadow: 1.5px 1.3px 1px 1.5px #1f2c35;
   border-radius: 2px;
 `;
 
@@ -79,15 +82,23 @@ const Button = styled.button`
   width: 76px;
   height: 27px;
   border: none;
-  background-color: white;
-  box-shadow: 0.3px 1px 1px 1.2px silver;
+  background-color: var(--color-grey-0);
+  box-shadow: 1.3px 1px 1px 1.2px #1f2c35;
   border-radius: 4px;
   cursor: pointer;
+  svg {
+    color: var(--color-green-100);
+    font-weight: 800;
+    font-size: 1em;
+    fill: var(--color-green-100);
+    width: 25px;
+  }
 `;
 
 const ButtonText = styled.h6`
   font-weight: 800;
   font-size: 0.8rem;
+  color: var(--color-green-100);
 `;
 function SingleCountry() {
   const { originalData } = useCountryFetcher();

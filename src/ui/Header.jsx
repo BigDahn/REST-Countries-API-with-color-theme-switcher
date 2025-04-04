@@ -3,13 +3,13 @@ import Logo from "./Logo";
 import Theme from "./Theme";
 
 const StyledHeader = styled.header`
-  background-color: white;
+  background-color: var(--color-grey-0);
   //border-bottom: 1px solid gray;
   //border: none;
   // box-shadow: 2px 1px 2px gray;
   box-shadow: 0 4px 2px -2px gray;
   padding: 1px;
-  color: black;
+  
 `;
 
 const StyledDiv = styled.div`

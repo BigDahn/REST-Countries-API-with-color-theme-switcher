@@ -15,10 +15,13 @@ const StyledInput = styled.input`
   border: none;
   box-shadow: 1.5px 1.5px 2px 1.5px gray;
   height: 2rem;
+  outline: none;
+  background-color: var(--color-grey-0);
   padding-left: 3rem;
 
   &::placeholder {
-    color: black;
+    color: var(--color-green-100);
+    font-weight: 800;
   }
 `;
 
@@ -28,7 +31,7 @@ const Img = styled.div`
   left: 2rem;
   padding-left: 0.5rem;
   & svg {
-    color: black;
+    color: var(--color-green-100);
   }
 `;
 function Input() {

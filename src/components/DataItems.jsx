@@ -18,12 +18,13 @@ const Main = styled.main`
 `;
 
 const Section = styled.section`
-  background-color: white;
+  background-color: var(--color-grey-0);
   border-radius: 5px;
-  box-shadow: 1.5px 1.5px 2px 1.5px gray;
+  box-shadow: 1.5px 1.5px 2px 1.5px var(--color-grey-400);
   height: 20rem;
   // background-color: red;
   width: 15rem;
+  color: var(--color-green-100);
 `;
 const Img = styled.img`
   object-fit: cover;
