@@ -56,8 +56,9 @@ const Lang = styled.div`
 `;
 const Paragraph = styled.p`
   font-size: 10px;
-  background-color: var(--color-grey-490);
-  box-shadow: 1.5px 1px 1px 1.8px #212e37;
+  background-color: var(--color-grey-100);
+  box-shadow: 1.5px 1.5px 2px -2px gray;
+  //box-shadow: 1.5px 1px 1px 1.8px #212e37;
   padding-left: 17px;
   padding-right: 17px;
   padding-bottom: 5px;
@@ -70,7 +71,7 @@ const Image = styled.img`
   object-fit: cover;
   width: 27em;
   height: 19em;
-  box-shadow: 1.5px 1.3px 1px 1.5px #1f2c35;
+  //box-shadow: 1.5px 1.3px 1px 1.5px #1f2c35;
   border-radius: 2px;
 `;
 
@@ -82,8 +83,9 @@ const Button = styled.button`
   width: 76px;
   height: 27px;
   border: none;
-  background-color: var(--color-grey-0);
-  box-shadow: 1.3px 1px 1px 1.2px #1f2c35;
+  background-color: var(--color-grey-100);
+  box-shadow: 1.5px 1.5px 2px -2px gray;
+  //box-shadow: 1.3px 1px 1px 1.2px #1f2c35;
   border-radius: 4px;
   cursor: pointer;
   svg {

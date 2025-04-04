@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   border: none;
   gap: 0.6rem;
 
-  background-color: var(--color-grey-0);
+  background-color: var(--color-grey-100);
   border-radius: 4px;
   cursor: pointer;
   padding-left: 0.5em;
@@ -39,13 +39,13 @@ function Theme() {
       <StyledButton onClick={handleTheme}>
         {darkTheme ? (
           <>
-            <HiOutlineSun size={20} />
-            <StyledText>Light Mode</StyledText>
+            <HiOutlineMoon size={14} />
+            <StyledText>Dark Mode</StyledText>
           </>
         ) : (
           <>
-            <HiOutlineMoon size={20} />
-            <StyledText>Dark Mode</StyledText>
+            <HiOutlineSun size={20} />
+            <StyledText>Light Mode</StyledText>
           </>
         )}
       </StyledButton>

@@ -5,9 +5,9 @@ import styled from "styled-components";
 const StyledSortBy = styled.select`
   width: 12rem;
   height: 2rem;
-  background-color: var(--color-grey-0);
+  background-color: var(--color-grey-100);
   border: none;
-  box-shadow: 1.5px 1.5px 2px 1.5px gray;
+  box-shadow: 1.5px 1.5px 2px -2px gray;
   border-radius: 4px;
   color: var(--color-green-100);
   outline: none;

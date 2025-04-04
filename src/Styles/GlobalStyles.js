@@ -8,7 +8,8 @@ const GlobalStyles = createGlobalStyle`
 
   /* Grey */
   &,&.light-mode{
-  --color-grey-0: #fff;
+  --color-grey-0: #fafafa;
+  --color-grey-100: #ffffff;
   -color-grey-490: #fff;
   --color-grey-20: #fff;
   --color-grey-400: #6b7280
@@ -24,7 +25,7 @@ background-color: var(--color-grey-0);
 --color-grey-0: #202d36;
 -color-grey-490: #2b3743;
 --color-grey-50: #0000;
---color-grey-100: #1f2937;
+--color-grey-100: #2b3743;
 --color-grey-200: #374151;
 --color-grey-300: #4b5563;
 --color-grey-400: #6b7280;
@@ -55,7 +56,7 @@ background-color: var(--color-grey-0);
 --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
 --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.4);
 
-background-color: var(--color-grey-100); 
+background-color: var(--color-grey-0); 
 --image-grayscale: 10%;
 
 --image-opacity: 90%;

@@ -13,10 +13,11 @@ const StyledInput = styled.input`
   width: 17rem;
   border-radius: 4px;
   border: none;
-  box-shadow: 1.5px 1.5px 2px 1.5px gray;
+  box-shadow: 1.5px 1.5px 2px -2px gray;
   height: 2rem;
   outline: none;
-  background-color: var(--color-grey-0);
+  color: var(--color-green-100);
+  background-color: var(--color-grey-100);
   padding-left: 3rem;
 
   &::placeholder {
