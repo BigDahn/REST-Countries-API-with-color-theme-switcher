@@ -10,7 +10,7 @@ const StyledContainer = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 77rem;
+  width: 79rem;
   @media screen and (max-width: 600px) {
     max-width: 100%;
     display: flex;
@@ -19,6 +19,16 @@ const StyledContainer = styled.section`
     align-items: center;
     gap: 1em;
     justify-content: center;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 47rem;
+    display: flex;
+
+    //background-color: aliceblue;
+    align-items: center;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 const Main = styled.main`
