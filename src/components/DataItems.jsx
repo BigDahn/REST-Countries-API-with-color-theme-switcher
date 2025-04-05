@@ -16,6 +16,10 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
   margin: auto;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Section = styled.section`
@@ -45,7 +49,7 @@ const MainSection = styled.section`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  gap: 2em;
+  gap: 1.3em;
   //max-width: 1200px;
   align-items: end;
 `;

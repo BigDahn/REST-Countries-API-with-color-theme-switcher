@@ -3,8 +3,10 @@ import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledSortBy = styled.select`
-  width: 12rem;
-  height: 2rem;
+  width: 13rem;
+  height: 2.4rem;
+  padding-left: 1em;
+  padding-right: 1em;
   background-color: var(--color-grey-100);
   border: none;
   box-shadow: 1.5px 1.5px 2px -2px gray;

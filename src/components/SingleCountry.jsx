@@ -13,11 +13,21 @@ const Container = styled.main`
   align-items: start;
   margin-top: 2em;
   color: var(--color-green-100);
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
 `;
 
 const Div = styled.div`
   display: flex;
   gap: 6em;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Article = styled.article`
@@ -31,17 +41,35 @@ const SubInfo = styled.div`
   grid-template-columns: auto auto;
   gap: 3em;
   justify-content: center;
+  @media screen and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 0.4em;
+    //max-width: 24em;
+  }
 `;
 
 const BorderCountry = styled.div`
   display: flex;
   flex-shrink: 20px;
   gap: 0.4rem;
+  @media screen and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 50px 50px 50px;
+    place-content: center;
+    height: 110px;
+  }
 `;
 const Border = styled.div`
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
 `;
 
 const Languages = styled.div`
@@ -53,7 +81,7 @@ const Lang = styled.div`
   align-items: center;
   gap: 0.3rem;
   // background-color: red;
-  height: 15px;
+  height: 5px;
 `;
 const Paragraph = styled.p`
   font-size: 10px;
@@ -65,6 +93,17 @@ const Paragraph = styled.p`
   padding-bottom: 5px;
   padding-top: 5px;
   border-radius: 3px;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    border-radius: 3px;
+  }
   // border: 3px solid var(--color-grey-490);
 `;
 
@@ -74,6 +113,13 @@ const Image = styled.img`
   height: 19em;
   //box-shadow: 1.5px 1.3px 1px 1.5px #1f2c35;
   border-radius: 2px;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15em;
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`

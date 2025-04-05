@@ -8,6 +8,10 @@ const Container = styled.div`
   max-width: 72rem;
   display: flex;
   align-items: center;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    max-width: 24em;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -15,7 +19,7 @@ const StyledInput = styled.input`
   border-radius: 4px;
   border: none;
   box-shadow: 1.5px 1.5px 2px -2px gray;
-  height: 2rem;
+  height: 2.8em;
   outline: none;
   color: var(--color-green-100);
   background-color: var(--color-grey-100);
@@ -24,6 +28,11 @@ const StyledInput = styled.input`
   &::placeholder {
     color: var(--color-green-100);
     font-weight: 800;
+  }
+  @media screen and (max-width: 600px) {
+    display: flex;
+    width: 20em;
+    height: 3em;
   }
 `;
 

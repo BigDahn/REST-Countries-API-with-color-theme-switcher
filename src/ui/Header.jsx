@@ -18,8 +18,11 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 79rem;
-  margin: auto;
+  //max-width: 79rem;
+  //margin: auto;
+  @media screen and (max-width: 600px) {
+    //max-width: 40rem;
+  }
 `;
 
 function Header() {

@@ -2,9 +2,9 @@ import styled, { css } from "styled-components";
 import { useCountry } from "../contexts/CountryContext";
 
 const StyledNumber = styled.div`
-  background-color: white;
+  background-color: var(--color-grey-100);
   border-radius: 3px;
-  box-shadow: 1.5px 1.5px 2px 1.5px gray;
+
   height: 18px;
   display: flex;
   align-items: center;
@@ -14,9 +14,9 @@ const StyledNumber = styled.div`
     props.type === "active" &&
     css`
       //font-size: 1rem;
-      color: var(--color-grey-50);
+      color: var(--color-green-100);
       font-weight: 600;
-      background-color: #f25c54;
+      box-shadow: 1.5px 1.5px 2px -2px gray;
     `}
 `;
 
@@ -24,28 +24,55 @@ const Div = styled.div`
   display: flex;
   align-items: center;
   gap: 1em;
+  padding-bottom: 10px;
   //width: 120px;
   justify-content: center;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    gap: 0.9rem;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
 `;
 const NumberContainer = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+  @media screen and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    gap: 0.7rem;
+    place-content: center;
+    margin: auto;
+  }
 `;
 
 const Paragraph = styled.p`
   font-size: 0.6em;
   font-weight: 600;
   text-align: center;
+  color: var(--color-green-100);
 `;
 
 const StyledButton = styled.button`
   border: none;
   outline: none;
-  font-size: 1.2rem;
-  background-color: white;
+  width: 76px;
+  height: 27px;
+
+  font-size: 1rem;
+  background-color: var(--color-grey-100);
   border-radius: 3px;
   cursor: pointer;
+  color: var(--color-green-100);
+  box-shadow: 1.5px 1.5px 2px -2px gray;
+  @media screen and (max-width: 600px) {
+    width: 40px;
+    height: 17px;
+
+    font-size: 0.5rem;
+  }
 `;
 
 function PaginationNumber({ data, onClick }) {

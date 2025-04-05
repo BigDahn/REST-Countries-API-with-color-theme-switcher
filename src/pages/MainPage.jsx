@@ -10,7 +10,16 @@ const StyledContainer = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 77rem;
+  max-width: 77rem;
+  @media screen and (max-width: 600px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    //background-color: aliceblue;
+    align-items: center;
+    gap: 1em;
+    justify-content: center;
+  }
 `;
 const Main = styled.main`
   display: flex;
