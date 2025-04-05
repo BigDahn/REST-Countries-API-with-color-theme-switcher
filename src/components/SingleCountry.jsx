@@ -12,9 +12,15 @@ const Container = styled.main`
   gap: 3em;
   align-items: start;
   margin-top: 2em;
+
   color: var(--color-green-100);
 
   @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+  @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     gap: 2em;
@@ -24,9 +30,15 @@ const Container = styled.main`
 const Div = styled.div`
   display: flex;
   gap: 6em;
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    gap: 1em;
+  }
   @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;
+    gap: 1em;
   }
 `;
 
@@ -34,6 +46,7 @@ const Article = styled.article`
   display: flex;
   flex-direction: column;
   align-items: start;
+  //height: 12em;
 `;
 
 const SubInfo = styled.div`
@@ -47,11 +60,17 @@ const SubInfo = styled.div`
     gap: 0.4em;
     //max-width: 24em;
   }
+  @media screen and (max-width: 1024px) {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1em;
+    //max-width: 24em;
+  }
 `;
 
 const BorderCountry = styled.div`
   display: flex;
-  flex-shrink: 20px;
+  //flex-shrink: 20px;
   gap: 0.4rem;
   @media screen and (max-width: 600px) {
     display: grid;
@@ -60,12 +79,25 @@ const BorderCountry = styled.div`
     place-content: center;
     height: 110px;
   }
+  @media screen and (max-width: 1024px) {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 50px 50px 50px;
+    place-content: center;
+    height: 105px;
+  }
 `;
 const Border = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.3rem;
+
   @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  @media screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -104,6 +136,17 @@ const Paragraph = styled.p`
     padding-top: 4px;
     border-radius: 3px;
   }
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    border-radius: 3px;
+  }
   // border: 3px solid var(--color-grey-490);
 `;
 
@@ -118,6 +161,13 @@ const Image = styled.img`
     align-items: center;
     justify-content: center;
     height: 15em;
+    width: 100%;
+  }
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 17em;
     width: 100%;
   }
 `;

@@ -75,14 +75,14 @@ const StyledButton = styled.button`
   }
 `;
 
-function PaginationNumber({ data, onClick }) {
+function PaginationNumber({ data, onClick, prevBtn }) {
   const { page } = useCountry();
   console.log(data.length);
   return (
     <Div>
       {data.length > 1 && (
         <>
-          <StyledButton>Prev</StyledButton>
+          <StyledButton onClick={prevBtn}>Prev</StyledButton>
           <NumberContainer>
             {data.map((s, i) => {
               let active = page === i;

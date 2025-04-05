@@ -9,13 +9,20 @@ const Main = styled.main`
   display: grid;
   grid-template-columns: auto auto auto auto;
   //grid-template-rows: auto auto auto auto;
-  gap: 5em;
+  gap: 2em;
   place-content: center;
   //max-width: 1200px;
   //padding-left: 3rem;
   justify-content: center;
   align-items: center;
   margin: auto;
+
+  @media screen and (max-width: 1024px) {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1.2em;
+  }
+
   @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;
@@ -95,6 +102,9 @@ function DataItems({ data = {} }) {
     setPage((index) => (index === data.length - 1 ? 0 : index + 1));
   }
 
+  function handlePrev() {
+    setPage((index) => (index === 0 ? 0 : index - 1));
+  }
   return (
     <MainSection>
       <Main>
@@ -124,7 +134,7 @@ function DataItems({ data = {} }) {
           );
         })}
       </Main>
-      <PaginationNumber data={data} onClick={handleNext} />
+      <PaginationNumber data={data} onClick={handleNext} prevBtn={handlePrev} />
     </MainSection>
   );
 }
