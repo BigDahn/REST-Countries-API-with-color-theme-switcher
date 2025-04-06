@@ -6,10 +6,8 @@ const Heading = styled.h1`
   justify-content: center;
 `;
 
-function NoCountry() {
-  return (
-    <Heading>Sorry We couldn't find what you were looking for....</Heading>
-  );
+function Loading() {
+  return <Heading>Loading... Please Wait</Heading>;
 }
 
-export default NoCountry;
+export default Loading;

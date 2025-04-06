@@ -77,7 +77,7 @@ const StyledButton = styled.button`
 
 function PaginationNumber({ data, onClick, prevBtn }) {
   const { page } = useCountry();
-  console.log(data.length);
+  
   return (
     <Div>
       {data.length > 1 && (

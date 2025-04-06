@@ -4,6 +4,7 @@ import formatNumber from "../helpers/formatNumber";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import PaginationNumber from "./PaginationNumber";
 import { useCountry } from "../contexts/CountryContext";
+import NoCountry from "../ui/NoCountry";
 
 const Main = styled.main`
   display: grid;
@@ -76,12 +77,7 @@ const Span = styled.span`
   font-weight: 600;
 `;
 
-const StyledButton = styled.div`
-  display: flex;
-  border: 1px thin black;
-  gap: 2rem;
-  background-color: red;
-`;
+
 function DataItems({ data = {} }) {
   console.log(data);
   const [searchParams] = useSearchParams();
@@ -105,6 +101,10 @@ function DataItems({ data = {} }) {
 
   function handlePrev() {
     setPage((index) => (index === 0 ? 0 : index - 1));
+  }
+
+  if (data.length < 1) {
+    return <NoCountry />;
   }
   return (
     <MainSection>

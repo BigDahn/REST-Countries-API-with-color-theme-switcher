@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import DataItems from "./DataItems";
-import { useCountryFetcher } from "../hooks/useCountryFetcher";
 import paginatedData from "../helpers/utils";
 import { useSearchParams } from "react-router-dom";
 import { useCountry } from "../contexts/CountryContext";
+import Loading from "../ui/Loading";
 
 //const paginatedResult = paginatedData(originalData);
 function Data() {
   const [searchParams] = useSearchParams();
 
-  //  console.log(originalData);
   const { data, isLoading, input } = useCountry();
 
   const paginatedResult = paginatedData(data);
@@ -32,7 +31,7 @@ function Data() {
   if (sortBy === "Oceania")
     sortBy = paginatedData(data?.filter((s) => s.region === "Oceania"));
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Loading />;
 
   return <DataItems data={input ? InputSearch : sortBy} />;
 }

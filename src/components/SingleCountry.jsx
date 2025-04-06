@@ -233,7 +233,7 @@ function SingleCountry() {
             borders,
           } = s;
 
-          const sp = borders?.map((s) => {
+          const borderCountry = borders?.map((s) => {
             return Data.filter((ss) => ss.alpha3Code === s);
           });
 
@@ -293,7 +293,7 @@ function SingleCountry() {
                   <Border>
                     <h6>Border Countries:</h6>
                     <BorderCountry>
-                      {sp?.map((border) => {
+                      {borderCountry?.map((border) => {
                         console.log(border);
                         return (
                           <Paragraph>
