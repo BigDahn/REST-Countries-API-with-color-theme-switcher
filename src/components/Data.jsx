@@ -11,6 +11,7 @@ function Data() {
 
   const { data, isLoading, input } = useCountry();
 
+  console.log(data);
   const paginatedResult = paginatedData(data);
 
   const InputSearch = paginatedData(

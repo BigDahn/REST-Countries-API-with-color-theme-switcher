@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useCountryFetcher } from "../hooks/useCountryFetcher";
+
 import styled from "styled-components";
 import formatNumber from "../helpers/formatNumber";
 import { HiArrowLeft } from "react-icons/hi2";

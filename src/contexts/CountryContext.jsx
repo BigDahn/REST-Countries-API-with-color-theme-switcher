@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import paginatedData from "../helpers/utils";
-
+import { country } from "../../data/data.json";
 const CountryDataContext = createContext();
 
 function CountryContext({ children }) {
@@ -9,18 +9,12 @@ function CountryContext({ children }) {
   const [page, setPage] = useState(0);
   const [input, setInput] = useState("");
 
-  async function getData() {
-    // Fetch data
-    setIsLoading(true);
-    const response = await fetch("http://localhost:9000/country"); ///home/big_dahn/rest_country_api/src/data.json
-    const result = await response.json();
-    setData(result);
-
+  setTimeout(() => {
     setIsLoading(false);
-  }
+  }, 100);
 
   useEffect(() => {
-    getData();
+    setData(country);
   }, []);
 
   function handleInput(e) {
