@@ -12,7 +12,7 @@ function CountryContext({ children }) {
   async function getData() {
     // Fetch data
     setIsLoading(true);
-    const response = await fetch("/src/data.json"); ///home/big_dahn/rest_country_api/src/data.json
+    const response = await fetch("http://localhost:9000/country"); ///home/big_dahn/rest_country_api/src/data.json
     const result = await response.json();
     setData(result);
 
