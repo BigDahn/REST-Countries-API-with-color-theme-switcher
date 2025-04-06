@@ -12,7 +12,7 @@ function CountryContext({ children }) {
   async function getData() {
     // Fetch data
     setIsLoading(true);
-    const response = await fetch(`src/data.json`);
+    const response = await fetch("src/data.json");
     const result = await response.json();
     setData(result);
 
