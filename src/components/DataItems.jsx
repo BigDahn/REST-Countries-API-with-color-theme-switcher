@@ -83,6 +83,7 @@ const StyledButton = styled.div`
   background-color: red;
 `;
 function DataItems({ data = {} }) {
+  console.log(data);
   const [searchParams] = useSearchParams();
   const { page, setPage } = useCountry();
   const [newData, setNewData] = useState();

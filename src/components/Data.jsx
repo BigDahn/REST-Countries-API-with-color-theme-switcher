@@ -10,15 +10,15 @@ function Data() {
   const [searchParams] = useSearchParams();
 
   //  console.log(originalData);
-  const { data, isLoading, Dated } = useCountry();
-
-  console.log(Dated);
+  const { data, isLoading, input } = useCountry();
 
   const paginatedResult = paginatedData(data);
 
-  const Hnh = paginatedData(Dated);
+  const InputSearch = paginatedData(
+    data?.filter((s) => s?.name?.startsWith(input))
+  );
 
-  let sortBy = searchParams.get("region") || "";
+  let sortBy = searchParams.get("region") || "Filter by Region";
 
   if (sortBy === "Filter by Region") sortBy = paginatedResult;
   if (sortBy === "Africa")
@@ -34,7 +34,7 @@ function Data() {
 
   if (isLoading) return "Loading...";
 
-  return <DataItems data={sortBy || Hnh} />;
+  return <DataItems data={input ? InputSearch : sortBy} />;
 }
 
 export default Data;

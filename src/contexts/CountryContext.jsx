@@ -5,7 +5,6 @@ const CountryDataContext = createContext();
 
 function CountryContext({ children }) {
   const [data, setData] = useState();
-  const [Dated, setDated] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(0);
   const [input, setInput] = useState("");
@@ -16,7 +15,7 @@ function CountryContext({ children }) {
     const response = await fetch(`src/data.json`);
     const result = await response.json();
     setData(result);
-    setDated(result);
+
     setIsLoading(false);
   }
 
@@ -29,7 +28,6 @@ function CountryContext({ children }) {
 
     //setData(data.filter((s) => s.name === e.target.value));
     //console.log(data);
-    setDated(data.filter((s) => s.name.startsWith(input)));
   }
 
   //console.log(data.filter((s) => s.name.startsWith(input)));
@@ -44,8 +42,6 @@ function CountryContext({ children }) {
         setPage,
         input,
         handleInput,
-        Dated,
-        setDated,
       }}
     >
       {children}
